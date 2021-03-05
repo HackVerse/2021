@@ -40,7 +40,7 @@ let adv_info = [{
         designation: 'Dean Alumni Affairs and Institutional Relations'
     },
     {
-        name: 'Prof. M.S. Bhat',
+        name: 'Prof. M.S.Bhat',
         image_path: 'adv-com/ahs.jpg',
         email: 'ahs@nitk.ac.in',
         linkedin: '#',
@@ -84,13 +84,7 @@ let adv_info = [{
     
 ]
 
-let fac_info = [{
-        name: 'Dr. Anand Kumar M.',
-        image_path: 'fac-ads/anandkumar.png',
-        email: 'm_anandkumar.nitk.edu.in',
-        linkedin: '#',
-        designation: 'Assistant Professor'
-    },
+let fac_info = [
     {
         name: 'Dr. Sowmya Kamath S.',
         image_path: 'fac-ads/sk-image.jpg',
@@ -104,7 +98,13 @@ let fac_info = [{
         email: 'suprabha@nitk.ac.in',
         linkedin: '#',
         designation: 'Assistant Professor'
-    }
+    },{
+      name: 'Dr. Anand Kumar M.',
+      image_path: 'fac-ads/anandkumar.png',
+      email: 'm_anandkumar.nitk.edu.in',
+      linkedin: '#',
+      designation: 'Assistant Professor'
+  }
 ]
 
 
