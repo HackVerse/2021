@@ -87,7 +87,7 @@
           <img class="banner" src="./img/Banner.png" alt="EVENT BY NITK" />
           <h1 class="subtitle mt-3">24-HOUR NATION WIDE HACKATHON</h1>
             <h1 class="title">
-                <a href="https://youtu.be/AooUtb5dGUI" class="title" target="_blank" style="color:black"></a>
+                <a href="https://youtu.be/AooUtb5dGUI" class="title" target="_blank" style="color:black">
                   HACK<span style="color: #233452">VERSE</span>
               <span style="color: #db2121">2.0</span>
             </a>
@@ -168,6 +168,61 @@
             </p>
           </div>
         </div>
+
+        <!-- HackVerse 2.0 stats -->
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <div class="col-12 col-md-12">
+            <div class="section-heading-2">
+              <h3 class="text-center schedule-header" style="margin-bottom: 70px; color: black">
+                HackVerse 2.0 Stats
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="row stats">
+          <div class="col-12 col-lg-4">
+            <div class="text-center mb-100">
+              <i class="fas fa-users fa-4x" aria-hidden="true"></i>
+              <div class="milestone-number">
+                <span class="number-holder">2800</span>
+                <span class="number-suffix">+</span>
+              </div>
+              <div class="milestone-desc">Total Registrations</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="text-center mb-100">
+              <i class="fas fa-user-secret fa-4x" aria-hidden="true"></i>
+              <div class="milestone-number">
+                <span class="number-holder">700</span>
+                <span class="number-suffix">+</span>
+              </div>
+              <div class="milestone-desc">Hackers Hosted</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="text-center mb-100">
+              <i class="fas fa-university fa-4x" aria-hidden="true"></i>
+              <div class="milestone-number">
+                <span class="number-holder">140</span>
+                <span class="number-suffix">+</span>
+              </div>
+              <div class="milestone-desc">Engineering Institutes</div>
+            </div>
+          </div>
+          <!-- <div class="col-12 col-lg-3 mb-100">
+            <div class="text-center mb-100">
+              <i class="fas fa-globe fa-4x" aria-hidden="true"></i>
+              <div class="milestone-number">
+                <span class="number-holder">15</span>
+                <span class="number-suffix">+</span>
+              </div>
+              <div class="milestone-desc">Companies</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
 
         <!-- <div class="row justify-content-center">
           <div class="col-9 iframe-container">
@@ -289,7 +344,6 @@
                           <li><h5>04.00PM - CodeChef Hour #2 </h5></li>
                         </ul>
                       </div>
-                    </h1>
                   </div>
                 </li>
                 <li class="event" data-date="05:00PM">
@@ -311,7 +365,7 @@
                           <li><h5>10.00PM - CodeChef Hour #4 </h5></li>
                         </ul>
                       </div>
-                    </h1>
+                    
                   </div>
                 </li>
               </ul>
@@ -333,7 +387,7 @@
                           <li><h5>10.00AM - CodeChef Hour #7 </h5></li>
                         </ul>
                       </div>
-                    </h1>
+                    
                   </div>
                 </li>
                 <li class="event" data-date="12:00PM" >
@@ -2908,6 +2962,36 @@
         $(this).next().slideToggle();
         $(this).next().next().next().slideToggle();
       });
+
+      $(window).scroll(testScroll);
+      var viewed = false;
+
+      function isScrolledIntoView(elem) {
+          var docViewTop = $(window).scrollTop();
+          var docViewBottom = docViewTop + $(window).height();
+
+          var elemTop = $(elem).offset().top;
+          var elemBottom = elemTop + $(elem).height();
+
+          return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+      }
+
+      function testScroll() {
+        if (isScrolledIntoView($(".milestone-number")) && !viewed) {
+            viewed = true;
+            $('.number-holder').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+          });
+        }
+      }
     </script>
 
     <a
